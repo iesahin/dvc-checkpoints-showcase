@@ -1,0 +1,10 @@
+stages:
+  first:
+    cmd: cat $RANDOM >> my_results.txt
+    outs:
+    - my_results.txt:
+        checkpoint: true
+  second:
+    cmd: cat my_results.txt
+    deps:
+    - my_results.txt
